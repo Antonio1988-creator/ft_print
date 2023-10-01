@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anguil-l <anguil-l@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/30 14:14:07 by anguil-l          #+#    #+#              #
-#    Updated: 2023/09/30 18:18:30 by anguil-l         ###   ########.fr        #
+#    Created: 2023/10/01 09:34:51 by anguil-l          #+#    #+#              #
+#    Updated: 2023/10/01 09:35:02 by anguil-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
 
 # Directorios
-SRC_DIR = ./src/
-OBJ_DIR = ./obj/
-INC_DIR = ./include/
-LIBFT_DIR = ./libft/
+SRC_DIR = src/
+OBJ_DIR = obj/
+INC_DIR = include/
+LIBFT_DIR = libft/
 
 # Archivos fuentes y objetos
 SRC_FILES = $(wildcard $(SRC_DIR)*.c)
@@ -33,7 +33,7 @@ LIBFT = $(LIBFT_DIR)libft.a
 CC = gcc
 
 # Flags para el compilador
-CFLAGS = -I $(INC_DIR) $(FLAGS)
+CFLAGS = -I$(INC_DIR) $(FLAGS)
 
 # Regla por defecto
 all: $(NAME)
@@ -67,3 +67,4 @@ re: fclean all
 
 # No tratar como archivos
 .PHONY: all clean fclean re
+

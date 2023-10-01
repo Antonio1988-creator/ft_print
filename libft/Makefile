@@ -6,7 +6,7 @@
 #    By: anguil-l <anguil-l@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 16:29:25 by anguil-l          #+#    #+#              #
-#    Updated: 2023/09/30 18:18:14 by anguil-l         ###   ########.fr        #
+#    Updated: 2023/10/01 09:49:54 by anguil-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ FLAGS = -Wall -Wextra -Werror
 # Directories
 SRC_DIR = srcs
 OBJ_DIR = obj
-INC_DIR = ../include
-HEADER = libft.h
+INC_DIR = include
+HEADER = ./include/libft.h
 SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
 			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c \
 			ft_lstiter_bonus.c ft_lstmap_bonus.c ${SRC_FILES}
@@ -46,7 +46,7 @@ obj:
 
 # Regla para compilar archivos objetos desde archivos fuente
 %.o: %.c Makefile ${HEADER} 
-	gcc $(FLAGS) -I $(INC_DIR) -I ../include -o $@ -c $<
+	gcc $(FLAGS) -I $(INC_DIR) -I include -o $@ -c $<
 
 # Se compilan los objetos en la biblioteca estática libft.a
 $(NAME): $(OBJ_FILES)
