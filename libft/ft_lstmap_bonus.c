@@ -6,7 +6,7 @@
 /*   By: anguil-l <anguil-l@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:45:41 by anguil-l          #+#    #+#             */
-/*   Updated: 2023/09/30 10:54:43 by anguil-l         ###   ########.fr       */
+/*   Updated: 2023/10/03 20:07:50 by anguil-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*current;
-	void	*new_content;
 	t_list	*new_node;
+	void	*new_content;
 
 	new_lst = NULL;
 	current = lst;
@@ -25,10 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		new_content = f(current->content);
 		if (!new_content)
-		{
-			ft_lstclear(&new_lst, del);
 			return (NULL);
-		}
 		new_node = ft_lstnew(new_content);
 		if (!new_node)
 		{

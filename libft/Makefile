@@ -6,27 +6,27 @@
 #    By: anguil-l <anguil-l@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 16:29:25 by anguil-l          #+#    #+#              #
-#    Updated: 2023/10/01 09:49:54 by anguil-l         ###   ########.fr        #
+#    Updated: 2023/09/30 10:29:48 by anguil-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Name
+# Nombre del programa
 NAME = libft.a
 
-# Flags
+# Flags de compilación
 FLAGS = -Wall -Wextra -Werror
 
-# Directories
+# Directorios
 SRC_DIR = srcs
 OBJ_DIR = obj
-INC_DIR = include
-HEADER = ./include/libft.h
+INC_DIR = includes
+HEADER = libft.h
 SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
 			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c \
 			ft_lstiter_bonus.c ft_lstmap_bonus.c ${SRC_FILES}
 OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
-# List of source files
+# Lista de archivos fuente
 SRC_FILES = ft_atoi.c ft_isalpha.c ft_isprint.c ft_memset.c ft_strlen.c ft_tolower.c \
             ft_bzero.c ft_isascii.c ft_memcpy.c ft_strlcat.c ft_strncmp.c ft_toupper.c \
             ft_isalnum.c ft_isdigit.c ft_memmove.c ft_strlcpy.c ft_strnstr.c ft_strchr.c \
@@ -46,7 +46,7 @@ obj:
 
 # Regla para compilar archivos objetos desde archivos fuente
 %.o: %.c Makefile ${HEADER} 
-	gcc $(FLAGS) -I $(INC_DIR) -I include -o $@ -c $<
+	gcc $(FLAGS) -I $(INC_DIR) -o $@ -c $<
 
 # Se compilan los objetos en la biblioteca estática libft.a
 $(NAME): $(OBJ_FILES)
